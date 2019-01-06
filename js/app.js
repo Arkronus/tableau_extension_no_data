@@ -26,11 +26,12 @@
 
     function buildMessage() {
         var worksheetName = tableau.extensions.settings.get("worksheet");
-        var worksheet = getWorksheetByName(worksheetName);
         var message = tableau.extensions.settings.get("message");
 
-        $("#worksheet").text(worksheetName);
-        $("#message").text(message);
+        console.log(worksheetName);
+        console.log(message);
+        
+        var worksheet = getWorksheetByName(worksheetName);
 
         worksheet.getSummaryDataAsync().then((sumdata) =>{
             var dataLength = sumdata.data.length;

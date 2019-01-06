@@ -28,8 +28,8 @@
         console.log("Saving");
         tableau.extensions.settings.set("worksheet", $("#selectWorksheet").val());
         tableau.extensions.settings.set("message", $("#messageText").val());
-        console.log(tableau.extensions.settings.get("worksheet"));
-        console.log(tableau.extensions.settings.get("message"));
+        // console.log(tableau.extensions.settings.get("worksheet"));
+        // console.log(tableau.extensions.settings.get("message"));
 
         tableau.extensions.settings.saveAsync().then((currentSettings) => {
             tableau.extensions.ui.closeDialog("10");
