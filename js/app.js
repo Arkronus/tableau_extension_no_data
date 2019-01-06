@@ -1,7 +1,9 @@
 'use strict';
 
 (function(){
-    $(document).ready(function(){
+    $(document).ready(initExtension)
+
+    function initExtension(){
         tableau.extensions.initializeAsync({'configure':configure}).then(() => {
             buildMessage();
             var worksheetName = tableau.extensions.settings.get("worksheet");
@@ -12,7 +14,8 @@
                 console.log("Error while initializing:" + err.toString()); 
             });
         })
-    })
+
+    }
 
     function getWorksheetByName(worksheetName){
         const worksheets = tableau.extensions.dashboardContent.dashboard.worksheets;
@@ -49,7 +52,7 @@
         const popupUrl = `${window.location.origin}/dialog.html`;
         let defaultPayload = "";
         tableau.extensions.ui.displayDialogAsync(popupUrl, defaultPayload, { height:300, width:500 }).then((closePayload) => {
-            buildMessage();
+            initExtension();
         }).catch((error) => {
             switch (error.errorCode) {
                 case tableau.ErrorCodes.DialogClosedByUser:
