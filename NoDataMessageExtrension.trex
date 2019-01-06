@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest manifest-version="0.1" xmlns="http://www.tableau.com/xml/extension_manifest">
+  <dashboard-extension id="ru.aprytkov.nodatamessage" extension-version="0.1.0">
+    <default-locale>en_US</default-locale>
+    <name resource-id=""/>
+    <description>Tableau No Data extension</description>
+    <author name="Artem Prytkov" email="aprytkov@gmail.com" organization="No" website="https://www.none.com"/>
+    <min-api-version>0.9</min-api-version>
+    <source-location>
+      <url>http://localhost:8080</url>
+    </source-location>
+    <icon></icon>
+    <context-menu>
+     <configure-context-menu-item/>
+    </context-menu>
+  </dashboard-extension>
+  
+  <resources>
+    <resource id="name">
+      <text locale="en_US">No Data message</text>
+    </resource>
+  </resources>
+</manifest>
